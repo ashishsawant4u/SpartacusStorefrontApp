@@ -7,7 +7,8 @@ import { translations, translationChunksConfig } from '@spartacus/assets';
 import { B2cStorefrontModule } from '@spartacus/storefront';
 import { OffersComponent } from './offers/offers.component';
 import { RouteManagerModule } from './route-manager/route-manager.module';
-import { UrlModule } from '@spartacus/core';
+import { PRODUCT_NORMALIZER, UrlModule } from '@spartacus/core';
+import { ProductNormalizerService } from './product-normalizer.service';
 
 @NgModule({
   declarations: [
@@ -44,7 +45,9 @@ import { UrlModule } from '@spartacus/core';
     RouteManagerModule,
     UrlModule
   ],
-  providers: [],
+  providers: [
+    {provide : PRODUCT_NORMALIZER , useClass : ProductNormalizerService , multi: true}
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
