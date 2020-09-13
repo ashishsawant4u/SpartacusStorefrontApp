@@ -3,6 +3,7 @@ import { CommonModule } from '@angular/common';
 import { RouterModule,Routes } from '@angular/router';
 import { OffersComponent } from '../offers/offers.component';
 import { CmsPageGuard, PageLayoutComponent } from '@spartacus/storefront';
+import { ConfigModule, RoutingConfig } from '@spartacus/core';
 
 
 const ROUTES_LIST : Routes  = [
@@ -16,7 +17,21 @@ const ROUTES_LIST : Routes  = [
   declarations: [],
   imports: [
     CommonModule,
-    RouterModule.forChild(ROUTES_LIST)
+    RouterModule.forChild(ROUTES_LIST),
+    ConfigModule.withConfig({
+      routing : {
+        routes : {
+          product: {
+            paths : [
+              'digital-world/:productCode/:name',
+              'digital-world/:productCode'
+              
+            ]
+          }
+        }
+      }
+    } as RoutingConfig)
+    
   ]
 })
 export class RouteManagerModule { }
