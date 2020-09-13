@@ -23,7 +23,8 @@ import { B2cStorefrontModule } from '@spartacus/storefront';
       context: {
         currency: ['USD'],
         language: ['en'],
-        baseSite: ['electronics-spa']
+        baseSite: ['electronics-spa'],
+        urlParameters: ['baseSite','language','currency']
       },
       i18n: {
         resources: translations,
