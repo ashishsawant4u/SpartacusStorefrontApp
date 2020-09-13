@@ -1,4 +1,9 @@
 <a [routerLink]="{ cxRoute:'product', params: {code:'553637'} } | cxUrl ">Today's Offer Product</a>
 
+<br>
 
+<button (click)="getWeekTopProduct()">Top Product Of the week</button>
+
+
+<br>
 <pre> {{cmsDataForPage | async | json }} </pre>

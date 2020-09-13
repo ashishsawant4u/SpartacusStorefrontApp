@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { CmsService } from '@spartacus/core';
+import { CmsService, RoutingService } from '@spartacus/core';
 
 @Component({
   selector: 'app-offers',
@@ -10,11 +10,16 @@ export class OffersComponent implements OnInit {
 
   cmsDataForPage : any;
 
-  constructor(private cmsService : CmsService) { }
+  constructor(private cmsService : CmsService,
+              private routerService : RoutingService) { }
 
   ngOnInit(): void {
 
    this.cmsDataForPage = this.cmsService.getCurrentPage();
+  }
+
+  getWeekTopProduct() : void {
+    this.routerService.go({ cxRoute:'product', params: {code:'1981415'} });
   }
 
 }
