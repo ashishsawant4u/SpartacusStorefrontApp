@@ -7,7 +7,7 @@ import { CmsPageGuard } from '@spartacus/storefront';
 
 const ROUTES_LIST : Routes  = [
   
-    {path:"offers", component:OffersComponent, canActivate:[CmsPageGuard]}
+    {path:"offers", component:OffersComponent, canActivate:[CmsPageGuard] , data:{ pageLabel: 'faq'} }
 
 ];
 

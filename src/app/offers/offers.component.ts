@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { CmsService } from '@spartacus/core';
 
 @Component({
   selector: 'app-offers',
@@ -7,9 +8,13 @@ import { Component, OnInit } from '@angular/core';
 })
 export class OffersComponent implements OnInit {
 
-  constructor() { }
+  cmsDataForPage : any;
+
+  constructor(private cmsService : CmsService) { }
 
   ngOnInit(): void {
+
+   this.cmsDataForPage = this.cmsService.getCurrentPage();
   }
 
 }
