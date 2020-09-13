@@ -5,10 +5,13 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { translations, translationChunksConfig } from '@spartacus/assets';
 import { B2cStorefrontModule } from '@spartacus/storefront';
+import { OffersComponent } from './offers/offers.component';
+import { RouteManagerModule } from './route-manager/route-manager.module';
 
 @NgModule({
   declarations: [
-    AppComponent
+    AppComponent,
+    OffersComponent
   ],
   imports: [
     BrowserModule,
@@ -36,7 +39,8 @@ import { B2cStorefrontModule } from '@spartacus/storefront';
       features: {
         level: '2.1'
       }
-    })
+    }),
+    RouteManagerModule
   ],
   providers: [],
   bootstrap: [AppComponent]
