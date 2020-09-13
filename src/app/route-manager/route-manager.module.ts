@@ -37,7 +37,7 @@ const ROUTES_LIST : Routes  = [
         occ: {
           endpoints: {
           product:
-              'products/${productCode}?fields=DEFAULT,manufacturer',
+              'products/${productCode}?fields=DEFAULT,manufacturer,price(FULL),images(FULL)',
           }
         }
       }
