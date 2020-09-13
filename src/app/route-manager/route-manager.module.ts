@@ -3,7 +3,7 @@ import { CommonModule } from '@angular/common';
 import { RouterModule,Routes } from '@angular/router';
 import { OffersComponent } from '../offers/offers.component';
 import { CmsPageGuard, PageLayoutComponent } from '@spartacus/storefront';
-import { ConfigModule, RoutingConfig } from '@spartacus/core';
+import { ConfigModule, OccConfig, RoutingConfig } from '@spartacus/core';
 
 
 const ROUTES_LIST : Routes  = [
@@ -23,6 +23,7 @@ const ROUTES_LIST : Routes  = [
         routes : {
           product: {
             paths : [
+              'digital-world/:manufacturer/:productCode',
               'digital-world/:productCode/:name',
               'digital-world/:productCode'
               
@@ -30,7 +31,18 @@ const ROUTES_LIST : Routes  = [
           }
         }
       }
-    } as RoutingConfig)
+    } as RoutingConfig),
+    ConfigModule.withConfig({
+      backend: {
+        occ: {
+          endpoints: {
+          product:
+              'products/${productCode}?fields=DEFAULT,manufacturer',
+          }
+        }
+      }
+    } as OccConfig)
+
     
   ]
 })
