@@ -7,6 +7,7 @@ import { translations, translationChunksConfig } from '@spartacus/assets';
 import { B2cStorefrontModule } from '@spartacus/storefront';
 import { OffersComponent } from './offers/offers.component';
 import { RouteManagerModule } from './route-manager/route-manager.module';
+import { UrlModule } from '@spartacus/core';
 
 @NgModule({
   declarations: [
@@ -40,7 +41,8 @@ import { RouteManagerModule } from './route-manager/route-manager.module';
         level: '2.1'
       }
     }),
-    RouteManagerModule
+    RouteManagerModule,
+    UrlModule
   ],
   providers: [],
   bootstrap: [AppComponent]
