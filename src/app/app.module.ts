@@ -56,7 +56,22 @@ export const GERMAN_TRANSLATION = {
       }
     }),
     ConfigModule.withConfig({
-      i18n: { resources: GERMAN_TRANSLATION }
+      i18n: { resources: GERMAN_TRANSLATION },
+      layoutSlots:{
+        header: {
+          lg:{
+            slots: [
+              'SiteLogo',
+              'SiteContext',
+              'SiteLogin',
+              'SearchBox',
+              'MiniCart',
+              'NavigationBar',
+              
+            ],
+          }
+        }
+      },
    }),
     RouteManagerModule,
     UrlModule
