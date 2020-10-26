@@ -20,9 +20,9 @@ import { ProductNormalizerService } from './product-normalizer.service';
     AppRoutingModule,
     B2cStorefrontModule.withConfig({
       backend: {
-        occ: {
-          baseUrl: 'https://api.c39j2-walkersde1-d3-public.model-t.cc.commerce.ondemand.com/',
-          prefix: '/rest/v2/'
+        occ: {      
+          baseUrl: 'https://spartacus-demo.eastus.cloudapp.azure.com:8443',
+          prefix: '/occ/v2/'
         }
       },
       context: {
