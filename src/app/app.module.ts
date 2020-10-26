@@ -19,6 +19,9 @@ import { ProductNormalizerService } from './product-normalizer.service';
     BrowserModule,
     AppRoutingModule,
     B2cStorefrontModule.withConfig({
+      checkout: {
+        guest: true
+      },
       backend: {
         occ: {      
           baseUrl: 'https://spartacus-demo.eastus.cloudapp.azure.com:8443',
