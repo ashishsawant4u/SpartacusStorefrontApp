@@ -7,8 +7,18 @@ import { translations, translationChunksConfig } from '@spartacus/assets';
 import { B2cStorefrontModule } from '@spartacus/storefront';
 import { OffersComponent } from './offers/offers.component';
 import { RouteManagerModule } from './route-manager/route-manager.module';
-import { PRODUCT_NORMALIZER, UrlModule } from '@spartacus/core';
+import { ConfigModule, PRODUCT_NORMALIZER, UrlModule } from '@spartacus/core';
 import { ProductNormalizerService } from './product-normalizer.service';
+
+export const GERMAN_TRANSLATION = {
+     de:{
+       common:{
+         searchBox:{
+           placeholder : 'FIND PRODS',
+         }
+       }
+     }
+};
 
 @NgModule({
   declarations: [
@@ -45,6 +55,9 @@ import { ProductNormalizerService } from './product-normalizer.service';
         level: '2.1'
       }
     }),
+    ConfigModule.withConfig({
+      i18n: { resources: GERMAN_TRANSLATION }
+   }),
     RouteManagerModule,
     UrlModule
   ],
