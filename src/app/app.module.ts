@@ -7,8 +7,9 @@ import { translations, translationChunksConfig } from '@spartacus/assets';
 import { B2cStorefrontModule } from '@spartacus/storefront';
 import { OffersComponent } from './offers/offers.component';
 import { RouteManagerModule } from './route-manager/route-manager.module';
-import { ConfigModule, PRODUCT_NORMALIZER, UrlModule } from '@spartacus/core';
+import { CmsConfig, ConfigModule, PRODUCT_NORMALIZER, UrlModule } from '@spartacus/core';
 import { ProductNormalizerService } from './product-normalizer.service';
+import { CartCustomComponent } from './cart-custom/cart-custom.component';
 
 export const GERMAN_TRANSLATION = {
      de:{
@@ -23,7 +24,8 @@ export const GERMAN_TRANSLATION = {
 @NgModule({
   declarations: [
     AppComponent,
-    OffersComponent
+    OffersComponent,
+    CartCustomComponent
   ],
   imports: [
     BrowserModule,
@@ -71,8 +73,15 @@ export const GERMAN_TRANSLATION = {
             ],
           }
         }
-      },
+      }
    }),
+   ConfigModule.withConfig({
+    cmsComponents:{
+      CartComponent : {
+        component : CartCustomComponent,
+      }
+    },
+   } as CmsConfig),
     RouteManagerModule,
     UrlModule
   ],
