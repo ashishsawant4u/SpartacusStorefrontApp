@@ -7,9 +7,10 @@ import { translations, translationChunksConfig } from '@spartacus/assets';
 import { B2cStorefrontModule } from '@spartacus/storefront';
 import { OffersComponent } from './offers/offers.component';
 import { RouteManagerModule } from './route-manager/route-manager.module';
-import { CmsConfig, ConfigModule, PRODUCT_NORMALIZER, UrlModule } from '@spartacus/core';
+import { ActiveCartService, CmsConfig, ConfigModule, PRODUCT_NORMALIZER, UrlModule } from '@spartacus/core';
 import { ProductNormalizerService } from './product-normalizer.service';
 import { CartCustomComponent } from './cart-custom/cart-custom.component';
+import { CustomCartService } from './custom.cart.service.service';
 
 export const GERMAN_TRANSLATION = {
      de:{
@@ -86,7 +87,8 @@ export const GERMAN_TRANSLATION = {
     UrlModule
   ],
   providers: [
-    {provide : PRODUCT_NORMALIZER , useClass : ProductNormalizerService , multi: true}
+    {provide : PRODUCT_NORMALIZER , useClass : ProductNormalizerService , multi: true},
+    {provide : ActiveCartService , useClass : CustomCartService}
   ],
   bootstrap: [AppComponent]
 })
